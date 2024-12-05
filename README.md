@@ -22,3 +22,30 @@ Categorize trades in a bank's portfolio
     
    `TradeCategorizer` does not create category instances directly, it receives a collection of categories via constructor. This allows flexibility to add new rules without modifying the main class, promoting a more flexible design.
 
+## Design and Architecture Patterns
+
+1. Open/Closed Principle (OCP)
+   
+   The system is open for extension, but closed for modification. New categories can be added by implementing the `ICategory` interface, without changing the existing code in `TradeCategorizer`.
+
+2. Single Responsibility Principle (SRP)
+   
+   Each class has a single responsibility. For example, the `Trade` class only handles trade data, and each category implements specific classification logic.
+
+3. Strategy Pattern
+   
+   Using different category implementations through the `ICategory` interface is an example of a *Strategy Pattern*, where the categorization logic is dynamically selected at runtime.
+
+4. Chain of Responsibility
+   
+   Categorization follows a chain-like flow, where each category attempts to classify the trade. The loop in the `TradeCategorizer` of the `Categorize` method reflects this pattern, as rules are applied sequentially until a match is found.
+
+5. SOLID
+   
+   All SOLID principles are applied in the design:
+
+   - SRP: Classes focused on a single responsibility.
+   - OCP: Extensible without modifying the code base.
+   - LSP (Liskov Substitution Principle): Each `ICategory` implementation can replace the interface without changing the expected behavior.
+   - ISP (Interface Segregation Principle): `ICategory` is small and focused on a single functionality.
+   - DIP (Dependency Inversion Principle): `TradeCategorizer` depends on abstractions (`ICategory`), not on concrete implementations.
