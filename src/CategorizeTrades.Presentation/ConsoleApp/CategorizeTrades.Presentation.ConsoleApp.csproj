@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="SampleInput\XYZBankTrading.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="SampleInput\XYZBankTrading.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\CategorizeTrades.Application\CategorizeTrades.Application.csproj" />
+    <ProjectReference Include="..\..\CategorizeTrades.Domain\CategorizeTrades.Domain.csproj" />
+    <ProjectReference Include="..\..\CategorizeTrades.Infrastructure\CategorizeTrades.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
