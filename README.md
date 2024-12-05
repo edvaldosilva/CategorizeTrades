@@ -49,3 +49,11 @@ Categorize trades in a bank's portfolio
    - LSP (Liskov Substitution Principle): Each `ICategory` implementation can replace the interface without changing the expected behavior.
    - ISP (Interface Segregation Principle): `ICategory` is small and focused on a single functionality.
    - DIP (Dependency Inversion Principle): `TradeCategorizer` depends on abstractions (`ICategory`), not on concrete implementations.
+  
+## Extensibility and Maintenance
+
+- Extensibility: To add new categories, simply implement `ICategory` and add it to the set of categories in `TradeCategorizer`. This avoids modifications to the core system.
+- Maintainability: The system is modular, making it easy to update and fix isolated bugs without affecting the rest of the code.
+- Testability: The clear separation between business logic and classification allows for precise and specific unit testing.
+  
+This approach promotes a clean, flexible design that is prepared for continuous evolution.
