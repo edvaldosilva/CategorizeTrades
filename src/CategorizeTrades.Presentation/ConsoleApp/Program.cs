@@ -9,7 +9,7 @@ namespace CategorizeTrades
     {
         static async Task Main(string[] args)
         {
-
+            // arquivo de dados
             IPortfolio portfolio = await FileReader.LoadAsync("SampleInput/XYZBankTrading.txt");
 
             var categories = new List<ICategory>
